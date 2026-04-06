@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Where Are You in the Research Funnel? — Honors Thesis Self-Assessment</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --cream: #faf8f3; --cream-mid: #f0ece0; --cream-dark: #e4ddd0;
+  --walnut: #2e2118; --walnut-mid: #5c3d28; --walnut-light: #9b6b3e; --walnut-pale: #f5ede3;
+  --sage: #6b7d63; --sage-light: #a8baa0; --sage-pale: #e6ede3;
+  --gold: #a8882a; --gold-light: #c9ab5a; --gold-pale: #f7f0d8; --gold-border: #dfc87a;
+  --c1:#534AB7; --c1p:#EEEDFE; --c1d:#3C3489; --c1m:#7F77DD;
+  --c2:#0F6E56; --c2p:#E1F5EE; --c2d:#085041; --c2m:#1D9E75;
+  --c3:#185FA5; --c3p:#E6F1FB; --c3d:#0C447C; --c3m:#378ADD;
+  --c4:#854F0B; --c4p:#FAEEDA; --c4d:#633806; --c4m:#BA7517;
+  --c5:#993C1D; --c5p:#FAECE7; --c5d:#712B13; --c5m:#D85A30;
+  --c6:#3B6D11; --c6p:#EAF3DE; --c6d:#27500A; --c6m:#639922;
+}
+html { scroll-behavior: smooth; }
+body { background:var(--cream); color:var(--walnut); font-family:'Jost',sans-serif; font-weight:300; line-height:1.75; min-height:100vh; }
+
+/* ── Header ── */
+header { padding:72px 24px 56px; text-align:center; position:relative; border-bottom:1px solid var(--cream-dark); overflow:hidden; }
+header::before { content:''; position:absolute; inset:0; background-image: repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(107,125,99,0.07) 39px,rgba(107,125,99,0.07) 40px), repeating-linear-gradient(90deg,transparent,transparent 39px,rgba(107,125,99,0.07) 39px,rgba(107,125,99,0.07) 40px); pointer-events:none; }
+.eyebrow { font-size:11px; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:var(--sage); margin-bottom:20px; position:relative; }
+h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(38px,6vw,62px); font-weight:500; line-height:1.05; color:var(--walnut); margin-bottom:24px; position:relative; }
+h1 em { font-style:italic; color:var(--walnut-light); }
+.header-desc { font-size:15px; font-weight:300; color:var(--walnut-mid); max-width:540px; margin:0 auto 32px; position:relative; }
+
+/* ── Funnel intro visual ── */
+.funnel-intro-wrap { background:white; border-bottom:1px solid var(--cream-dark); padding:36px 24px 40px; text-align:center; }
+.funnel-intro-inner { max-width:560px; margin:0 auto; }
+.funnel-intro-label { font-size:12px; font-weight:400; color:var(--sage); letter-spacing:0.04em; margin-bottom:24px; font-style:italic; }
+
+/* ── Onboarding ── */
+#onboarding { max-width:680px; margin:0 auto; padding:48px 24px 64px; }
+.onboard-q { font-family:'Cormorant Garamond',serif; font-size:26px; font-weight:500; color:var(--walnut); margin-bottom:8px; text-align:center; }
+.onboard-sub { font-size:14px; color:var(--walnut-mid); text-align:center; margin-bottom:36px; }
+.onboard-options { display:flex; flex-direction:column; gap:12px; }
+.onboard-btn {
+  display:flex; align-items:flex-start; gap:16px;
+  background:white; border:1.5px solid var(--cream-dark); border-radius:12px;
+  padding:18px 22px; cursor:pointer; text-align:left;
+  transition:all 0.15s ease; width:100%;
+}
+.onboard-btn:hover { border-color:var(--sage-light); box-shadow:0 2px 12px rgba(46,33,24,0.06); }
+.onboard-btn.selected { border-color:var(--sage); background:var(--sage-pale); }
+.ob-num { font-family:'Cormorant Garamond',serif; font-size:22px; font-style:italic; color:var(--sage-light); flex-shrink:0; line-height:1.3; min-width:20px; }
+.ob-text strong { font-weight:500; font-size:15px; color:var(--walnut); display:block; margin-bottom:3px; }
+.ob-text span { font-size:13px; color:var(--walnut-mid); line-height:1.5; }
+.onboard-cta { margin-top:28px; text-align:center; }
+.btn-primary { background:var(--walnut); color:var(--cream); border:none; border-radius:8px; padding:14px 36px; font-family:'Jost',sans-serif; font-size:14px; font-weight:400; letter-spacing:0.04em; cursor:pointer; transition:opacity 0.15s ease; }
+.btn-primary:hover { opacity:0.85; }
+.btn-primary:disabled { opacity:0.3; cursor:default; }
+
+/* ── Progress bar ── */
+#main-tool { display:none; }
+.progress-wrap { background:white; border-bottom:1px solid var(--cream-dark); padding:14px 40px; position:sticky; top:0; z-index:100; }
+.progress-inner { max-width:860px; margin:0 auto; display:flex; align-items:center; gap:16px; }
+.progress-label { font-size:12px; color:var(--sage); font-weight:400; white-space:nowrap; }
+.progress-track { flex:1; height:4px; background:var(--cream-mid); border-radius:2px; overflow:hidden; }
+.progress-fill { height:100%; background:var(--sage); border-radius:2px; transition:width 0.5s ease; width:0%; }
+.progress-count { font-size:12px; color:var(--sage); white-space:nowrap; }
+
+/* ── Where you are banner ── */
+.location-banner { max-width:860px; margin:32px auto 0; padding:0 24px; }
+.location-card { background:white; border:1px solid var(--cream-dark); border-radius:12px; padding:20px 28px; display:flex; align-items:flex-start; gap:16px; }
+.location-dot { width:10px; height:10px; border-radius:50%; background:var(--sage); flex-shrink:0; margin-top:6px; }
+.location-text strong { font-weight:500; font-size:15px; color:var(--walnut); display:block; margin-bottom:4px; }
+.location-text p { font-size:13px; color:var(--walnut-mid); line-height:1.6; }
+.location-text p em { font-style:italic; color:var(--walnut-light); }
+
+/* ── Main ── */
+main { max-width:860px; margin:0 auto; padding:32px 24px 80px; }
+
+/* ── Iteration note ── */
+.iteration-note { background:var(--gold-pale); border:1px solid var(--gold-border); border-radius:10px; padding:16px 22px; margin-bottom:28px; display:flex; gap:12px; align-items:flex-start; }
+.iteration-icon { font-size:16px; flex-shrink:0; margin-top:1px; color:var(--gold); font-weight:500; }
+.iteration-text { font-size:13px; color:var(--walnut-mid); line-height:1.6; }
+.iteration-text strong { font-weight:500; color:var(--gold); }
+
+/* ── Stage card ── */
+.stage-card { background:white; border:1px solid var(--cream-dark); border-radius:16px; margin-bottom:16px; overflow:hidden; transition:box-shadow 0.2s ease; }
+.stage-card:hover { box-shadow:0 4px 24px rgba(46,33,24,0.06); }
+.stage-card.complete { border-color:var(--sage-light); }
+.stage-card.focus-stage { border-width:2px; }
+
+/* Stage header */
+.stage-header { display:flex; align-items:stretch; cursor:pointer; user-select:none; }
+.stage-number-block { width:60px; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-family:'Cormorant Garamond',serif; font-size:26px; font-style:italic; font-weight:500; border-right:1px solid var(--cream-dark); }
+.stage-header-content { flex:1; padding:18px 22px; }
+.stage-name { font-family:'Cormorant Garamond',serif; font-size:21px; font-weight:600; line-height:1.2; margin-bottom:3px; }
+.stage-question-preview { font-size:13px; color:var(--walnut-mid); font-weight:300; }
+.stage-toggle { padding:0 22px; display:flex; flex-direction:column; align-items:flex-end; justify-content:center; gap:7px; }
+.toggle-icon { width:26px; height:26px; border-radius:50%; border:1px solid var(--cream-dark); display:flex; align-items:center; justify-content:center; font-size:11px; color:var(--sage); transition:transform 0.3s ease, background 0.2s ease; flex-shrink:0; }
+.stage-card.open .toggle-icon { transform:rotate(180deg); background:var(--sage-pale); }
+.stage-badge { font-size:10px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; padding:3px 10px; border-radius:20px; white-space:nowrap; }
+.focus-pill { font-size:10px; font-weight:500; letter-spacing:0.07em; text-transform:uppercase; padding:3px 10px; border-radius:20px; background:var(--sage-pale); color:var(--sage); white-space:nowrap; }
+
+/* Color theming */
+.stage-1 .stage-number-block { color:var(--c1); background:var(--c1p); border-color:rgba(83,74,183,0.15); }
+.stage-1 .stage-name { color:var(--c1d); }
+.stage-1 .stage-badge { background:var(--c1p); color:var(--c1); }
+.stage-1.open .stage-header { background:var(--c1p); }
+.stage-1.focus-stage { border-color:var(--c1); }
+
+.stage-2 .stage-number-block { color:var(--c2); background:var(--c2p); border-color:rgba(15,110,86,0.15); }
+.stage-2 .stage-name { color:var(--c2d); }
+.stage-2 .stage-badge { background:var(--c2p); color:var(--c2); }
+.stage-2.open .stage-header { background:var(--c2p); }
+.stage-2.focus-stage { border-color:var(--c2); }
+
+.stage-3 .stage-number-block { color:var(--c3); background:var(--c3p); border-color:rgba(24,95,165,0.15); }
+.stage-3 .stage-name { color:var(--c3d); }
+.stage-3 .stage-badge { background:var(--c3p); color:var(--c3); }
+.stage-3.open .stage-header { background:var(--c3p); }
+.stage-3.focus-stage { border-color:var(--c3); }
+
+.stage-4 .stage-number-block { color:var(--c4); background:var(--c4p); border-color:rgba(133,79,11,0.15); }
+.stage-4 .stage-name { color:var(--c4d); }
+.stage-4 .stage-badge { background:var(--c4p); color:var(--c4); }
+.stage-4.open .stage-header { background:var(--c4p); }
+.stage-4.focus-stage { border-color:var(--c4); }
+
+.stage-5 .stage-number-block { color:var(--c5); background:var(--c5p); border-color:rgba(153,60,29,0.15); }
+.stage-5 .stage-name { color:var(--c5d); }
+.stage-5 .stage-badge { background:var(--c5p); color:var(--c5); }
+.stage-5.open .stage-header { background:var(--c5p); }
+.stage-5.focus-stage { border-color:var(--c5); }
+
+.stage-6 .stage-number-block { color:var(--c6); background:var(--c6p); border-color:rgba(59,109,17,0.15); }
+.stage-6 .stage-name { color:var(--c6d); }
+.stage-6 .stage-badge { background:var(--c6p); color:var(--c6); }
+.stage-6.open .stage-header { background:var(--c6p); }
+.stage-6.focus-stage { border-color:var(--c6); }
+
+/* Stage body */
+.stage-body { max-height:0; overflow:hidden; transition:max-height 0.5s cubic-bezier(0.4,0,0.2,1); }
+.stage-card.open .stage-body { max-height:2400px; }
+.stage-body-inner { padding:28px 32px 32px; border-top:1px solid var(--cream-dark); }
+
+/* Not-yet-ready overlay */
+.not-ready-note { background:var(--cream-mid); border-radius:10px; padding:20px 24px; margin-bottom:24px; display:flex; gap:14px; align-items:flex-start; }
+.nrn-icon { font-size:18px; flex-shrink:0; }
+.nrn-text strong { font-weight:500; font-size:14px; color:var(--walnut); display:block; margin-bottom:4px; }
+.nrn-text p { font-size:13px; color:var(--walnut-mid); line-height:1.6; }
+
+/* Body grid */
+.body-grid { display:grid; grid-template-columns:1fr 1fr; gap:28px 36px; }
+@media (max-width:640px) { .body-grid { grid-template-columns:1fr; } .full-col { grid-column:1; } }
+.full-col { grid-column:1 / -1; }
+
+.section-label { font-size:10px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--sage); margin-bottom:12px; padding-bottom:9px; border-bottom:1px solid var(--cream-dark); }
+
+/* Checklist */
+.checklist { display:flex; flex-direction:column; gap:10px; }
+.check-item { display:flex; align-items:flex-start; gap:12px; }
+.check-item input[type="checkbox"] { appearance:none; -webkit-appearance:none; width:18px; height:18px; border:1.5px solid var(--cream-dark); border-radius:4px; flex-shrink:0; margin-top:3px; cursor:pointer; transition:all 0.15s ease; position:relative; background:white; }
+.check-item input:checked { background:var(--sage); border-color:var(--sage); }
+.check-item input:checked::after { content:''; position:absolute; top:2px; left:5px; width:5px; height:9px; border:2px solid white; border-top:none; border-left:none; transform:rotate(45deg); }
+.check-item label { font-size:14px; color:var(--walnut-mid); line-height:1.55; cursor:pointer; transition:color 0.15s ease; }
+.check-item input:checked + label { color:var(--sage); text-decoration:line-through; text-decoration-color:var(--sage-light); }
+
+/* Info lists */
+.info-list { list-style:none; display:flex; flex-direction:column; gap:9px; }
+.info-list li { font-size:14px; color:var(--walnut-mid); padding-left:18px; position:relative; line-height:1.55; }
+.info-list li::before { content:'→'; position:absolute; left:0; color:var(--sage-light); font-size:12px; top:2px; }
+.info-list li strong { font-weight:500; color:var(--walnut); }
+
+/* Tool chips */
+.tool-chips { display:flex; flex-wrap:wrap; gap:7px; margin-bottom:14px; }
+.tool-chip { background:var(--sage-pale); border:1px solid var(--sage-light); border-radius:20px; padding:4px 13px; font-size:12px; color:var(--sage); }
+
+/* Pitfall */
+.pitfall-box { background:var(--gold-pale); border:1px solid var(--gold-border); border-radius:10px; padding:18px 22px; display:flex; gap:14px; }
+.pitfall-icon { width:26px; height:26px; background:var(--gold-pale); border:1px solid var(--gold-border); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:12px; flex-shrink:0; margin-top:1px; color:var(--gold); font-weight:600; }
+.pitfall-title { font-size:11px; font-weight:600; letter-spacing:0.07em; text-transform:uppercase; color:var(--gold); margin-bottom:5px; }
+.pitfall-text { font-size:14px; color:var(--walnut-mid); line-height:1.6; }
+
+/* Exit condition */
+.exit-box { background:var(--sage-pale); border:1px solid var(--sage-light); border-radius:10px; padding:18px 22px; }
+.exit-title { font-size:11px; font-weight:600; letter-spacing:0.07em; text-transform:uppercase; color:var(--sage); margin-bottom:10px; }
+.exit-list { list-style:none; display:flex; flex-direction:column; gap:8px; }
+.exit-list li { font-size:13px; color:var(--sage); padding-left:16px; position:relative; line-height:1.5; }
+.exit-list li::before { content:'✓'; position:absolute; left:0; font-size:11px; top:1px; }
+
+/* Reflection */
+.reflection-box { border-top:1px solid var(--cream-dark); padding-top:22px; }
+.reflection-label { font-family:'Cormorant Garamond',serif; font-size:17px; font-style:italic; color:var(--walnut-light); margin-bottom:10px; }
+.reflection-hint { font-size:12px; color:var(--sage-light); margin-bottom:10px; font-style:italic; }
+textarea.reflection-input { width:100%; min-height:88px; border:1px solid var(--cream-dark); border-radius:8px; padding:12px 16px; font-family:'Jost',sans-serif; font-size:14px; font-weight:300; color:var(--walnut); background:var(--cream); resize:vertical; transition:border-color 0.15s ease; line-height:1.6; }
+textarea.reflection-input::placeholder { color:var(--sage-light); }
+textarea.reflection-input:focus { outline:none; border-color:var(--sage); }
+
+/* Connector */
+.stage-connector { display:flex; align-items:center; justify-content:center; height:16px; position:relative; z-index:1; }
+.connector-line { width:1.5px; height:16px; background:var(--cream-dark); }
+
+/* Output stem */
+.output-stem { display:flex; flex-direction:column; align-items:center; margin-top:28px; }
+.stem-line-long { width:1.5px; height:40px; background:linear-gradient(to bottom,var(--cream-dark),var(--c6m)); }
+.output-card { background:var(--c6p); border:1.5px solid var(--c6m); border-radius:40px; padding:14px 36px; text-align:center; }
+.output-card-title { font-family:'Cormorant Garamond',serif; font-size:19px; font-style:italic; font-weight:500; color:var(--c6d); margin-bottom:2px; }
+.output-card-sub { font-size:12px; color:var(--c6); }
+
+/* Summary */
+.summary-section { margin-top:48px; padding:36px 40px; background:var(--walnut); border-radius:20px; color:var(--cream); }
+.summary-section h2 { font-family:'Cormorant Garamond',serif; font-size:28px; font-weight:500; font-style:italic; color:var(--cream); margin-bottom:6px; }
+.summary-sub { font-size:14px; color:var(--sage-light); margin-bottom:24px; }
+.summary-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:24px; }
+@media (max-width:560px) { .summary-grid { grid-template-columns:1fr; } }
+.summary-stat { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:14px 18px; text-align:center; }
+.stat-num { font-family:'Cormorant Garamond',serif; font-size:38px; font-weight:500; color:var(--gold-light); line-height:1; margin-bottom:4px; }
+.stat-label { font-size:11px; color:var(--sage-light); }
+.next-steps-title { font-size:11px; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:var(--sage-light); margin-bottom:10px; }
+.next-steps-list { display:flex; flex-direction:column; gap:8px; }
+.next-step-item { display:flex; align-items:flex-start; gap:10px; font-size:14px; color:var(--cream-mid); line-height:1.5; }
+.next-step-bullet { width:5px; height:5px; border-radius:50%; background:var(--gold-light); flex-shrink:0; margin-top:8px; }
+.advisor-note { margin-top:22px; padding:16px 20px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:10px; font-size:13px; color:var(--sage-light); line-height:1.6; }
+.advisor-note a { color:var(--gold-light); text-decoration:none; }
+.print-btn-wrap { text-align:center; margin-top:20px; }
+.print-btn { background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:8px; padding:12px 28px; font-family:'Jost',sans-serif; font-size:13px; color:var(--sage-light); cursor:pointer; letter-spacing:0.04em; transition:all 0.15s ease; }
+.print-btn:hover { background:rgba(255,255,255,0.12); color:var(--cream); }
+
+/* Footer */
+footer { text-align:center; padding:36px 24px; font-size:12px; color:var(--sage); border-top:1px solid var(--cream-dark); margin-top:48px; }
+footer a { color:var(--walnut-light); text-decoration:none; }
+
+/* Animations */
+@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+.stage-card { animation:fadeUp 0.4s ease both; }
+.stage-card:nth-child(1) { animation-delay:0.05s; }
+.stage-card:nth-child(3) { animation-delay:0.1s; }
+.stage-card:nth-child(5) { animation-delay:0.15s; }
+.stage-card:nth-child(7) { animation-delay:0.2s; }
+.stage-card:nth-child(9) { animation-delay:0.25s; }
+.stage-card:nth-child(11) { animation-delay:0.3s; }
+
+/* Print — checklists and reflections only */
+@media print {
+  /* Hide everything by default */
+  header::before, .progress-wrap, .toggle-icon, .print-btn-wrap,
+  #onboarding, footer, .location-banner, .iteration-note,
+  .body-grid > div:not(.full-col),
+  .pitfall-box, .exit-box, .not-ready-note,
+  .output-stem, .summary-section, .stage-connector,
+  .funnel-intro-wrap { display:none !important; }
+
+  /* Show only checklist and reflection full-col divs */
+  .full-col { display:block !important; grid-column:auto; }
+  .full-col.pitfall-box, .full-col.exit-box { display:none !important; }
+
+  /* Keep stage cards open and clean */
+  .stage-body { max-height:none !important; overflow:visible !important; }
+  .stage-body-inner { padding:12px 20px 16px; border-top:1px solid #ddd; }
+  .body-grid { display:block; }
+  .stage-card { box-shadow:none !important; break-inside:avoid; margin-bottom:14px; border:1px solid #ccc; border-radius:8px; }
+  .stage-header { background:none !important; }
+  .stage-number-block { width:44px; font-size:20px; border-right:1px solid #eee; }
+  .stage-name { font-size:17px; }
+  .stage-badge, .focus-pill { display:none; }
+
+  /* Checklist */
+  .checklist { gap:7px; }
+  .check-item input[type="checkbox"] { border:1.5px solid #aaa; background:white; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .check-item label { font-size:12px; color:#333; text-decoration:none !important; }
+
+  /* Reflection */
+  .reflection-box { padding-top:14px; margin-top:4px; }
+  .reflection-label { font-size:14px; }
+  .reflection-hint { display:none; }
+  textarea.reflection-input { border:1px solid #bbb; background:#fff; min-height:72px; font-size:12px; -webkit-print-color-adjust:exact; print-color-adjust:exact; width:100%; resize:none; }
+
+  /* Section labels */
+  .section-label { font-size:9px; margin-bottom:8px; padding-bottom:6px; }
+
+  /* Header — minimal print header */
+  header { padding:20px 24px 16px; border-bottom:1px solid #ddd; text-align:left; }
+  header::before { display:none; }
+  h1 { font-size:22px; margin-bottom:4px; }
+  h1 br { display:none; }
+  .header-desc { display:none; }
+  .eyebrow { margin-bottom:6px; }
+
+  /* Print attribution footer */
+  body::after {
+    content: 'Honors Thesis with Professor Sarah Grace · Walton College of Business · sarahcgrace.com';
+    display:block; text-align:center; font-size:9px; color:#999;
+    padding:16px 0 0; border-top:1px solid #eee; margin-top:16px;
+    font-family:'Jost',sans-serif;
+  }
+
+  main { padding:12px 20px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <p class="eyebrow">Honors Thesis with Professor Sarah Grace · Walton College of Business</p>
+  <h1>Where are you in the<br><em>research funnel?</em></h1>
+  <p class="header-desc">A self-assessment for students beginning or developing an honors thesis. Start by telling me where you are — it will adapt to meet you there.</p>
+</header>
+
+<!-- ══ FUNNEL VISUAL ══ -->
+<div class="funnel-intro-wrap">
+  <div class="funnel-intro-inner">
+    <p class="funnel-intro-label">The research process narrows from broad curiosity to focused contribution</p>
+    <svg width="100%" viewBox="0 0 520 420" xmlns="http://www.w3.org/2000/svg" style="max-width:480px;display:block;margin:0 auto;">
+      <!-- Funnel silhouette -->
+      <polygon points="40,20 480,20 390,370 130,370" fill="#f0ece0" stroke="#e4ddd0" stroke-width="1"/>
+      <!-- Stem -->
+      <rect x="225" y="370" width="70" height="36" rx="4" fill="#f0ece0" stroke="#e4ddd0" stroke-width="1"/>
+
+      <!-- Stage 1 -->
+      <rect x="48" y="26" width="424" height="52" rx="6" fill="#EEEDFE" stroke="#534AB7" stroke-width="1"/>
+      <text text-anchor="middle" x="260" y="48" font-family="'Cormorant Garamond',serif" font-size="15" font-weight="600" fill="#3C3489">Topic &amp; Phenomenon</text>
+      <text text-anchor="middle" x="260" y="66" font-family="'Jost',sans-serif" font-size="11" font-weight="300" fill="#534AB7">What real-world thing do you want to understand?</text>
+
+      <!-- Stage 2 -->
+      <rect x="76" y="88" width="368" height="52" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
+      <text text-anchor="middle" x="260" y="110" font-family="'Cormorant Garamond',serif" font-size="15" font-weight="600" fill="#085041">Literature Review</text>
+      <text text-anchor="middle" x="260" y="128" font-family="'Jost',sans-serif" font-size="11" font-weight="300" fill="#0F6E56">What do we know? What gaps remain?</text>
+
+      <!-- Stage 3 -->
+      <rect x="108" y="150" width="304" height="52" rx="6" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+      <text text-anchor="middle" x="260" y="172" font-family="'Cormorant Garamond',serif" font-size="15" font-weight="600" fill="#0C447C">Research Question</text>
+      <text text-anchor="middle" x="260" y="190" font-family="'Jost',sans-serif" font-size="11" font-weight="300" fill="#185FA5">What gap is this study addressing?</text>
+
+      <!-- Stage 4 -->
+      <rect x="144" y="212" width="232" height="52" rx="6" fill="#FAEEDA" stroke="#854F0B" stroke-width="1"/>
+      <text text-anchor="middle" x="260" y="234" font-family="'Cormorant Garamond',serif" font-size="15" font-weight="600" fill="#633806">Theory</text>
+      <text text-anchor="middle" x="260" y="252" font-family="'Jost',sans-serif" font-size="11" font-weight="300" fill="#854F0B">What lens explains the phenomenon?</text>
+
+      <!-- Stage 5 -->
+      <rect x="176" y="274" width="168" height="52" rx="6" fill="#FAECE7" stroke="#993C1D" stroke-width="1"/>
+      <text text-anchor="middle" x="260" y="296" font-family="'Cormorant Garamond',serif" font-size="15" font-weight="600" fill="#712B13">Method</text>
+      <text text-anchor="middle" x="260" y="314" font-family="'Jost',sans-serif" font-size="11" font-weight="300" fill="#993C1D">How will data be collected &amp; analyzed?</text>
+
+      <!-- Stage 6 -->
+      <rect x="204" y="336" width="112" height="34" rx="6" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1"/>
+      <text text-anchor="middle" x="260" y="358" font-family="'Cormorant Garamond',serif" font-size="14" font-weight="600" fill="#27500A">Findings</text>
+
+      <!-- Stem label — styled pill -->
+      <rect x="174" y="378" width="172" height="30" rx="15" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1.5"/>
+      <text text-anchor="middle" x="260" y="398" font-family="'Cormorant Garamond',serif" font-size="13" font-weight="600" fill="#27500A">Contribution to knowledge</text>
+
+      <!-- Iterative arrow annotation -->
+      <text text-anchor="start" x="398" y="118" font-family="'Jost',sans-serif" font-size="10" fill="#a8baa0">↺ iterative</text>
+      <line x1="394" y1="112" x2="382" y2="130" stroke="#a8baa0" stroke-width="0.8" stroke-dasharray="3 2"/>
+    </svg>
+  </div>
+</div>
+
+<!-- ══ ONBOARDING ══ -->
+<div id="onboarding">
+  <p class="onboard-q">Which of these best describes you right now?</p>
+  <p class="onboard-sub">Be honest — there's no wrong answer, and the tool works better when it knows where to focus.</p>
+  <div class="onboard-options">
+    <button class="onboard-btn" onclick="selectStage(this, 0)">
+      <span class="ob-num">A</span>
+      <div class="ob-text">
+        <strong>I have a general interest area, but I haven't landed on a clear phenomenon yet.</strong>
+        <span>I know the broad topic excites me, but I couldn't describe exactly what I want to study in one or two sentences.</span>
+      </div>
+    </button>
+    <button class="onboard-btn" onclick="selectStage(this, 1)">
+      <span class="ob-num">B</span>
+      <div class="ob-text">
+        <strong>I have a phenomenon in mind and I'm starting to read the literature.</strong>
+        <span>I can describe what I want to study, and I'm beginning to search for academic papers — but I haven't found a clear gap yet.</span>
+      </div>
+    </button>
+    <button class="onboard-btn" onclick="selectStage(this, 2)">
+      <span class="ob-num">C</span>
+      <div class="ob-text">
+        <strong>I have a solid lit review and I'm working toward a research question.</strong>
+        <span>I've read widely enough to understand what's known and what's missing. I'm trying to sharpen my question.</span>
+      </div>
+    </button>
+    <button class="onboard-btn" onclick="selectStage(this, 3)">
+      <span class="ob-num">D</span>
+      <div class="ob-text">
+        <strong>I have a research question and I'm figuring out theory and method.</strong>
+        <span>The question is mostly settled. Now I need to decide on the theoretical lens and how I'll actually collect and analyze data.</span>
+      </div>
+    </button>
+    <button class="onboard-btn" onclick="selectStage(this, 4)">
+      <span class="ob-num">E</span>
+      <div class="ob-text">
+        <strong>I'm in the middle of data collection or analysis.</strong>
+        <span>Method is decided and I'm in the work. I want to check my understanding of where I am and what comes next.</span>
+      </div>
+    </button>
+  </div>
+  <div class="onboard-cta">
+    <button class="btn-primary" id="startBtn" disabled onclick="startTool()">Show me where to focus →</button>
+  </div>
+</div>
+
+<!-- ══ MAIN TOOL ══ -->
+<div id="main-tool">
+
+  <div class="progress-wrap">
+    <div class="progress-inner">
+      <span class="progress-label">Checklist progress</span>
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      <span class="progress-count" id="progressCount">0 of 18 completed</span>
+    </div>
+  </div>
+
+  <div class="location-banner">
+    <div class="location-card" id="locationCard">
+      <div class="location-dot"></div>
+      <div class="location-text">
+        <strong id="locationTitle">You're here</strong>
+        <p id="locationBody"></p>
+      </div>
+    </div>
+  </div>
+
+  <main>
+
+    <div class="iteration-note">
+      <div class="iteration-icon">↺</div>
+      <div class="iteration-text"><strong>This process is iterative, not linear.</strong> Stages 1 and 2 in particular talk to each other constantly — you sharpen your phenomenon by reading, and you focus your reading by sharpening your phenomenon. Moving back to an earlier stage isn't falling behind; it's how good research actually works.</div>
+    </div>
+
+    <!-- ══ STAGE 1 ══ -->
+    <div class="stage-card stage-1" id="card-0">
+      <div class="stage-header" onclick="toggleCard(0)">
+        <div class="stage-number-block">1</div>
+        <div class="stage-header-content">
+          <div class="stage-name">Topic &amp; Phenomenon</div>
+          <div class="stage-question-preview">What real-world thing do you want to understand?</div>
+        </div>
+        <div class="stage-toggle">
+          <div class="toggle-icon" id="icon-0">▼</div>
+          <span class="stage-badge" id="badge-0">—</span>
+        </div>
+      </div>
+      <div class="stage-body">
+        <div class="stage-body-inner">
+          <div id="nrn-0"></div>
+          <div class="body-grid">
+
+            <div class="full-col">
+              <div class="section-label">Self-check — mark what's honestly true right now</div>
+              <div class="checklist">
+                <div class="check-item"><input type="checkbox" id="c0-0" onchange="updateProgress()"><label for="c0-0">I can describe in 1–2 sentences the specific real-world thing I want to understand — not just a broad topic area.</label></div>
+                <div class="check-item"><input type="checkbox" id="c0-1" onchange="updateProgress()"><label for="c0-1">My phenomenon is observable — I can point to concrete, specific examples of it happening in the world.</label></div>
+                <div class="check-item"><input type="checkbox" id="c0-2" onchange="updateProgress()"><label for="c0-2">I can explain why this phenomenon matters enough to spend a year studying it — to consumers, to practice, or to knowledge.</label></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="section-label">What this stage produces</div>
+              <ul class="info-list">
+                <li>A plain-language, specific description of the phenomenon</li>
+                <li>A clear sense of why it matters — your motivation for the project</li>
+                <li>Enough clarity to start productive literature searching</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="section-label">Questions to push yourself</div>
+              <ul class="info-list">
+                <li>Is this a <strong>phenomenon</strong> or just a topic? (See pitfall below.)</li>
+                <li>Can you describe it to a non-expert in two sentences?</li>
+                <li>Have you <em>observed</em> this in the real world, or only read about it?</li>
+                <li>What about it genuinely puzzles or bothers you?</li>
+                <li>Do you have a sense of the <strong>context</strong> you want to study this in — a specific industry, platform, brand, or population? It doesn't need to be locked in yet, but having a context in mind will focus your literature search.</li>
+              </ul>
+            </div>
+
+            <div class="full-col">
+              <div class="pitfall-box">
+                <div class="pitfall-icon">!</div>
+                <div>
+                  <div class="pitfall-title">Common pitfall — confusing a topic with a phenomenon</div>
+                  <div class="pitfall-text">"Consumer behavior" is a field. "Sustainable consumption" is a topic. "Why consumers who hold strong environmental values still choose fast fashion when shopping under time pressure" is a phenomenon — specific, observable, and puzzling. Push until you have something at that level of specificity. If you can't describe it in two sentences without using words like "the relationship between" or "the impact of," keep sharpening.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="full-col">
+              <div class="exit-box">
+                <div class="exit-title">You're ready to move to Stage 2 when...</div>
+                <ul class="exit-list">
+                  <li>You can describe your phenomenon in two specific, jargon-free sentences</li>
+                  <li>You can name 2–3 real-world examples of it</li>
+                  <li>You can explain why it matters without saying "I find it interesting"</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="full-col reflection-box">
+              <div class="reflection-label">In your own words: what is the phenomenon you want to study?</div>
+              <div class="reflection-hint">Aim for two sentences. Avoid jargon. Bring this to your advising meeting.</div>
+              <textarea class="reflection-input" placeholder="Try starting with: 'I want to understand why / how / when...' — be as specific as you can."></textarea>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage-connector"><div class="connector-line"></div></div>
+
+    <!-- ══ STAGE 2 ══ -->
+    <div class="stage-card stage-2" id="card-1">
+      <div class="stage-header" onclick="toggleCard(1)">
+        <div class="stage-number-block">2</div>
+        <div class="stage-header-content">
+          <div class="stage-name">Literature Review</div>
+          <div class="stage-question-preview">What do we already know? What gaps remain?</div>
+        </div>
+        <div class="stage-toggle">
+          <div class="toggle-icon" id="icon-1">▼</div>
+          <span class="stage-badge" id="badge-1">—</span>
+        </div>
+      </div>
+      <div class="stage-body">
+        <div class="stage-body-inner">
+          <div id="nrn-1"></div>
+          <div class="body-grid">
+
+            <div class="full-col">
+              <div class="section-label">Self-check — mark what's honestly true right now</div>
+              <div class="checklist">
+                <div class="check-item"><input type="checkbox" id="c1-0" onchange="updateProgress()"><label for="c1-0">I have read at least 8–10 relevant academic papers — at minimum the introduction and conclusion of each.</label></div>
+                <div class="check-item"><input type="checkbox" id="c1-1" onchange="updateProgress()"><label for="c1-1">I can identify 2–3 key themes, debates, or tensions in what I've read — organized by idea, not by paper.</label></div>
+                <div class="check-item"><input type="checkbox" id="c1-2" onchange="updateProgress()"><label for="c1-2">I can point to at least one gap — something the literature hasn't addressed that my study could speak to.</label></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="section-label">Where and how to search</div>
+              <div class="tool-chips">
+                <span class="tool-chip">Google Scholar</span>
+                <span class="tool-chip">UA Library (full text)</span>
+                <span class="tool-chip">NotebookLM</span>
+                <span class="tool-chip">Zotero</span>
+              </div>
+              <ul class="info-list">
+                <li><strong>Start broad, then narrow.</strong> Search your phenomenon + the discipline (e.g., "linguistic relativity consumer behavior," "language perception marketing")</li>
+                <li><strong>Follow citations.</strong> The reference lists of good papers are your best next leads</li>
+                <li><strong>You may need to bridge two literatures.</strong> Some phenomena live at the intersection of fields — search both</li>
+                <li><strong>Use NotebookLM</strong> to synthesize themes across PDFs once you have 6+ papers</li>
+                <li><strong>Rule of thumb:</strong> Read intros and conclusions of everything you cite; read the middle of the papers that matter most</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="section-label">What you're looking for</div>
+              <ul class="info-list">
+                <li>What do scholars broadly agree on?</li>
+                <li>Where do findings conflict or remain inconclusive?</li>
+                <li>What contexts, populations, or angles are understudied?</li>
+                <li>What do conclusions say "future research should explore"?</li>
+                <li>What theoretical frameworks keep appearing?</li>
+                <li>Are there adjacent fields that study this differently?</li>
+                <li><strong>Is the literature specific to your context</strong> (a particular industry, platform, or population) or does it study the phenomenon more generally? Both matter — but you'll eventually need to understand both the general phenomenon and how it plays out in your specific context.</li>
+              </ul>
+            </div>
+
+            <div class="full-col">
+              <div class="pitfall-box">
+                <div class="pitfall-icon">!</div>
+                <div>
+                  <div class="pitfall-title">Common pitfall — summarizing instead of synthesizing</div>
+                  <div class="pitfall-text">A lit review is not a list of what each paper found. It's an argument about what the field collectively knows, where it disagrees, and what remains unanswered. Organize your thinking by <em>theme or tension</em>, not by paper. Ask: if you removed all the author names and dates, would your summary still make a coherent argument? It should.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="full-col">
+              <div class="exit-box">
+                <div class="exit-title">You're ready to move to Stage 3 when...</div>
+                <ul class="exit-list">
+                  <li>You can identify 2–3 themes or debates in the literature without looking at your notes</li>
+                  <li>You can name at least one specific, honest gap — not just "more research is needed"</li>
+                  <li>A research question is beginning to suggest itself from the gap you've found</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="full-col">
+              <div class="iteration-note" style="margin-bottom:0">
+                <div class="iteration-icon">↺</div>
+                <div class="iteration-text"><strong>Stages 1 and 2 are deeply iterative.</strong> Reading will sharpen your phenomenon, and a sharper phenomenon will focus your reading. Expect to loop back to Stage 1 at least once as your literature review takes shape — that's not backtracking, that's the process working correctly.</div>
+              </div>
+            </div>
+
+            <div class="full-col reflection-box">
+              <div class="reflection-label">What gap or tension are you starting to see in the literature?</div>
+              <div class="reflection-hint">Even a rough intuition counts. What keeps coming up as unresolved, understudied, or contested?</div>
+              <textarea class="reflection-input" placeholder="Try: 'The literature seems to agree that... but hasn't examined...' or 'Most studies focus on X, leaving Y largely unexplored...'"></textarea>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage-connector"><div class="connector-line"></div></div>
+
+    <!-- ══ STAGE 3 ══ -->
+    <div class="stage-card stage-3" id="card-2">
+      <div class="stage-header" onclick="toggleCard(2)">
+        <div class="stage-number-block">3</div>
+        <div class="stage-header-content">
+          <div class="stage-name">Research Question</div>
+          <div class="stage-question-preview">What specific gap is your study addressing?</div>
+        </div>
+        <div class="stage-toggle">
+          <div class="toggle-icon" id="icon-2">▼</div>
+          <span class="stage-badge" id="badge-2">—</span>
+        </div>
+      </div>
+      <div class="stage-body">
+        <div class="stage-body-inner">
+          <div id="nrn-2"></div>
+          <div class="body-grid">
+
+            <div class="full-col">
+              <div class="section-label">Self-check — mark what's honestly true right now</div>
+              <div class="checklist">
+                <div class="check-item"><input type="checkbox" id="c2-0" onchange="updateProgress()"><label for="c2-0">I can state my research question in one sentence — open-ended, specific, and rooted in a gap from the literature.</label></div>
+                <div class="check-item"><input type="checkbox" id="c2-1" onchange="updateProgress()"><label for="c2-1">I can explain exactly which gap in the literature my question addresses and why that gap matters.</label></div>
+                <div class="check-item"><input type="checkbox" id="c2-2" onchange="updateProgress()"><label for="c2-2">My question is answerable within one study — with realistic methods and resources — and connects back to my original phenomenon.</label></div>
+                <div class="check-item"><input type="checkbox" id="c2-3" onchange="updateProgress()"><label for="c2-3">My question names a specific <strong>context</strong> — the industry, platform, brand, or population in which I'll study this phenomenon. (e.g., not just "fast fashion guilt" but "fast fashion guilt among college-aged Shein shoppers.")</label></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="section-label">What makes a strong research question</div>
+              <ul class="info-list">
+                <li>Starts with "how," "why," or "what" — not yes/no</li>
+                <li>Specific enough to answer in a single study</li>
+                <li>Clearly rooted in a gap you found in the literature</li>
+                <li>Answerable with realistic access and methods</li>
+                <li>Connects back to your original phenomenon</li>
+                <li><strong>Names a specific context</strong> — the field, industry, platform, brand, or population you're studying. Context is what makes a question answerable rather than endless.</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="section-label">Types of research questions</div>
+              <ul class="info-list">
+                <li><strong>Descriptive:</strong> What does X look like? How common is Y?</li>
+                <li><strong>Exploratory:</strong> Why does X happen? What shapes Y?</li>
+                <li><strong>Explanatory:</strong> How does X lead to Y? What is the mechanism?</li>
+                <li><strong>Comparative:</strong> How does X differ across contexts or groups?</li>
+              </ul>
+            </div>
+
+            <div class="full-col">
+              <div class="pitfall-box">
+                <div class="pitfall-icon">!</div>
+                <div>
+                  <div class="pitfall-title">Common pitfall — forcing a question before the lit review is ready</div>
+                  <div class="pitfall-text">A research question should feel like it <em>falls out</em> of a thorough literature review — not like something you invented before you read enough. If your question doesn't connect directly to a gap you can name from specific papers, you likely need more reading first. Premature questions tend to be either too broad to answer or disconnected from what's actually missing in the field.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="full-col">
+              <div class="exit-box">
+                <div class="exit-title">You're ready to move to Stage 4 when...</div>
+                <ul class="exit-list">
+                  <li>Your question is one sentence, open-ended, and you can write it from memory</li>
+                  <li>Your question names a specific context — not just a phenomenon in the abstract</li>
+                  <li>You can name the specific papers or debates that revealed the gap your question addresses</li>
+                  <li>Your advisor has seen and responded to at least a draft of your question</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="full-col reflection-box">
+              <div class="reflection-label">Draft your research question here — even a rough version:</div>
+              <div class="reflection-hint">Start with "How does..." or "Why do..." or "What is the relationship between..." — then tighten from there.</div>
+              <textarea class="reflection-input" placeholder="Write your best current draft. Note what feels uncertain or too broad underneath it."></textarea>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage-connector"><div class="connector-line"></div></div>
+
+    <!-- ══ STAGE 4 ══ -->
+    <div class="stage-card stage-4" id="card-3">
+      <div class="stage-header" onclick="toggleCard(3)">
+        <div class="stage-number-block">4</div>
+        <div class="stage-header-content">
+          <div class="stage-name">Theory</div>
+          <div class="stage-question-preview">What lens helps explain your phenomenon?</div>
+        </div>
+        <div class="stage-toggle">
+          <div class="toggle-icon" id="icon-3">▼</div>
+          <span class="stage-badge" id="badge-3">—</span>
+        </div>
+      </div>
+      <div class="stage-body">
+        <div class="stage-body-inner">
+          <div id="nrn-3"></div>
+          <div class="body-grid">
+
+            <div class="full-col">
+              <div class="section-label">Self-check — mark what's honestly true right now</div>
+              <div class="checklist">
+                <div class="check-item"><input type="checkbox" id="c3-0" onchange="updateProgress()"><label for="c3-0">I can name at least one theoretical framework relevant to my phenomenon and explain what it actually says — not just its name.</label></div>
+                <div class="check-item"><input type="checkbox" id="c3-1" onchange="updateProgress()"><label for="c3-1">I can explain how this theory connects to my research question — what it predicts, explains, or helps interpret.</label></div>
+                <div class="check-item"><input type="checkbox" id="c3-2" onchange="updateProgress()"><label for="c3-2">I understand whether I am applying, extending, or questioning the theory — and can explain the difference.</label></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="section-label">What theory does for your thesis</div>
+              <ul class="info-list">
+                <li>Provides principled explanation, not just description</li>
+                <li>Anchors your findings in broader scholarly conversations</li>
+                <li>Shapes how you interpret your data — actively, not decoratively</li>
+                <li>Makes your contribution legible to other researchers</li>
+                <li>Bridges your specific findings back to general knowledge</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="section-label">How to find your theory</div>
+              <ul class="info-list">
+                <li>Look at what frameworks appear repeatedly in your most useful papers</li>
+                <li>Ask your advisor what theories are prominent in this space</li>
+                <li>Check if theories from adjacent fields apply — cross-disciplinary lenses can be powerful</li>
+                <li>Note: some theories are controversial or have limited empirical support — know your theory's standing in the literature</li>
+              </ul>
+            </div>
+
+            <div class="full-col">
+              <div class="pitfall-box">
+                <div class="pitfall-icon">!</div>
+                <div>
+                  <div class="pitfall-title">Common pitfall — treating theory as decoration</div>
+                  <div class="pitfall-text">Naming a theory in your intro and never returning to it is not theoretical grounding. Your theory should be woven through your entire thesis: it shapes what you look for in data, how you interpret what you find, and how you situate your contribution in the conclusion. If you can delete all mentions of the theory without changing your argument, it isn't doing any work.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="full-col">
+              <div class="exit-box">
+                <div class="exit-title">You're ready to move to Stage 5 when...</div>
+                <ul class="exit-list">
+                  <li>You can explain your theory in plain language without looking it up</li>
+                  <li>You can articulate how the theory connects directly to your research question</li>
+                  <li>You know the theory's limitations and can acknowledge them honestly</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="full-col reflection-box">
+              <div class="reflection-label">What theoretical lens are you considering — and why does it fit?</div>
+              <div class="reflection-hint">Name the theory, explain what it says, and explain why it helps make sense of your specific phenomenon.</div>
+              <textarea class="reflection-input" placeholder="Try: 'I'm considering [theory] because it explains... This connects to my research question by...'"></textarea>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage-connector"><div class="connector-line"></div></div>
+
+    <!-- ══ STAGE 5 ══ -->
+    <div class="stage-card stage-5" id="card-4">
+      <div class="stage-header" onclick="toggleCard(4)">
+        <div class="stage-number-block">5</div>
+        <div class="stage-header-content">
+          <div class="stage-name">Method</div>
+          <div class="stage-question-preview">How will you collect and analyze data?</div>
+        </div>
+        <div class="stage-toggle">
+          <div class="toggle-icon" id="icon-4">▼</div>
+          <span class="stage-badge" id="badge-4">—</span>
+        </div>
+      </div>
+      <div class="stage-body">
+        <div class="stage-body-inner">
+          <div id="nrn-4"></div>
+          <div class="body-grid">
+
+            <div class="full-col">
+              <div class="section-label">Self-check — mark what's honestly true right now</div>
+              <div class="checklist">
+                <div class="check-item"><input type="checkbox" id="c4-0" onchange="updateProgress()"><label for="c4-0">I can explain whether my study is qualitative, quantitative, or mixed — and why that matches my research question.</label></div>
+                <div class="check-item"><input type="checkbox" id="c4-1" onchange="updateProgress()"><label for="c4-1">I know specifically what my data source is and have a realistic sense of how to access it.</label></div>
+                <div class="check-item"><input type="checkbox" id="c4-2" onchange="updateProgress()"><label for="c4-2">I have discussed method feasibility with my advisor, including timeline, access, and whether IRB approval is needed.</label></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="section-label">Common approaches</div>
+              <ul class="info-list">
+                <li><strong>Interviews / focus groups</strong> — rich qualitative depth</li>
+                <li><strong>Surveys / experiments</strong> — patterns across larger samples</li>
+                <li><strong>Content / discourse analysis</strong> — texts, ads, documents, media</li>
+                <li><strong>Case studies</strong> — deep contextual understanding</li>
+                <li><strong>Secondary data analysis</strong> — existing datasets or archives</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="section-label">Feasibility questions to answer</div>
+              <ul class="info-list">
+                <li>Who or what is your data source — and can you realistically access them?</li>
+                <li>Does this method require IRB approval? (Talk to your advisor early.)</li>
+                <li>What unique access, language skills, or experience do you bring?</li>
+                <li>What does a realistic timeline look like for data collection + analysis?</li>
+              </ul>
+            </div>
+
+            <div class="full-col">
+              <div class="pitfall-box">
+                <div class="pitfall-icon">!</div>
+                <div>
+                  <div class="pitfall-title">Common pitfall — choosing method before question</div>
+                  <div class="pitfall-text">"I want to do interviews" is a format preference, not a method decision. Your research question should drive the method — not the other way around. Ask yourself: what is the most honest way to find out what my question is asking? If your question asks <em>why</em> something happens, you probably need a method that captures reasoning and context. If it asks <em>how often</em> or <em>to what extent</em>, you likely need a method that reaches more people.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="full-col">
+              <div class="exit-box">
+                <div class="exit-title">You're ready to move to Stage 6 when...</div>
+                <ul class="exit-list">
+                  <li>Method is decided and you can explain why it fits your research question</li>
+                  <li>You have a realistic data access plan — not just a theoretical one</li>
+                  <li>IRB status is confirmed with your advisor</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="full-col reflection-box">
+              <div class="reflection-label">How do you think you'd actually study this — and what's your biggest constraint?</div>
+              <div class="reflection-hint">Be honest about what's difficult. Access, time, expertise — naming the constraint is the first step to solving it.</div>
+              <textarea class="reflection-input" placeholder="What method comes to mind and why? What would make it hard? What unique access or experience do you have?"></textarea>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage-connector"><div class="connector-line"></div></div>
+
+    <!-- ══ STAGE 6 ══ -->
+    <div class="stage-card stage-6" id="card-5">
+      <div class="stage-header" onclick="toggleCard(5)">
+        <div class="stage-number-block">6</div>
+        <div class="stage-header-content">
+          <div class="stage-name">Findings &amp; Conclusion</div>
+          <div class="stage-question-preview">What will you have learned — and why will it matter?</div>
+        </div>
+        <div class="stage-toggle">
+          <div class="toggle-icon" id="icon-5">▼</div>
+          <span class="stage-badge" id="badge-5">—</span>
+        </div>
+      </div>
+      <div class="stage-body">
+        <div class="stage-body-inner">
+          <div id="nrn-5"></div>
+          <div class="body-grid">
+
+            <div class="full-col">
+              <div class="section-label">Self-check — mark what's honestly true right now</div>
+              <div class="checklist">
+                <div class="check-item"><input type="checkbox" id="c5-0" onchange="updateProgress()"><label for="c5-0">I understand the difference between findings (what I found) and conclusions (what it means) — and can explain both.</label></div>
+                <div class="check-item"><input type="checkbox" id="c5-1" onchange="updateProgress()"><label for="c5-1">I can articulate, even roughly, what a meaningful contribution from this thesis might look like.</label></div>
+                <div class="check-item"><input type="checkbox" id="c5-2" onchange="updateProgress()"><label for="c5-2">I can describe how my findings will connect back to the literature I reviewed and the theory I used.</label></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="section-label">What strong findings look like</div>
+              <ul class="info-list">
+                <li>Directly answer the research question</li>
+                <li>Organized by themes or patterns — not by data source or timeline</li>
+                <li>Traceable back to evidence — the reader can see how you got there</li>
+                <li>Neither overstated nor undersold</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="section-label">What strong conclusions do</div>
+              <ul class="info-list">
+                <li>Interpret — say what the findings <em>mean</em>, not just what they are</li>
+                <li>Situate findings in the literature you reviewed</li>
+                <li>Name limitations honestly — this is integrity, not weakness</li>
+                <li>Articulate a clear, modest contribution: what do we now know?</li>
+                <li>Suggest where the research conversation goes next</li>
+              </ul>
+            </div>
+
+            <div class="full-col">
+              <div class="pitfall-box">
+                <div class="pitfall-icon">!</div>
+                <div>
+                  <div class="pitfall-title">Common pitfall — restating findings as the conclusion</div>
+                  <div class="pitfall-text">A conclusion that only summarizes what you found isn't a conclusion — it's a recap. The conclusion zooms back out: it situates your findings in the broader literature, it says what we now know that we didn't before, and it opens the door to what comes next. The funnel narrows — and then the conclusion cracks it open again.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="full-col reflection-box">
+              <div class="reflection-label">If this thesis goes well, what will you have contributed?</div>
+              <div class="reflection-hint">Try finishing: "After this study, we will know ___ that we didn't know before..." Even a rough answer here clarifies your purpose.</div>
+              <textarea class="reflection-input" placeholder="A contribution doesn't need to be revolutionary. It needs to be honest, specific, and meaningful to the field."></textarea>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="output-stem">
+      <div class="stem-line-long"></div>
+      <div class="output-card">
+        <div class="output-card-title">Contribution to knowledge</div>
+        <div class="output-card-sub">What the funnel is ultimately working toward</div>
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="summary-section" id="summarySection">
+      <h2>Your snapshot</h2>
+      <p class="summary-sub">Based on what you've checked off — here's where you stand.</p>
+      <div class="summary-grid">
+        <div class="summary-stat"><div class="stat-num" id="statChecked">0</div><div class="stat-label">items confirmed</div></div>
+        <div class="summary-stat"><div class="stat-num" id="statStages">0/6</div><div class="stat-label">stages with progress</div></div>
+        <div class="summary-stat"><div class="stat-num" id="statPct">0%</div><div class="stat-label">overall readiness</div></div>
+      </div>
+      <div class="next-steps-title">Suggested next steps</div>
+      <div class="next-steps-list" id="nextStepsList">
+        <div class="next-step-item"><div class="next-step-bullet"></div><span>Open your focus stage and work through the self-check items honestly.</span></div>
+      </div>
+      <div class="advisor-note">
+        Developed for honors undergraduate students at the Sam M. Walton College of Business, University of Arkansas, working with <a href="https://sarahcgrace.com">Professor Sarah Grace</a>.
+      </div>
+      <div class="print-btn-wrap">
+        <button class="print-btn" onclick="printAssessment()">↓ &nbsp; Save or print as PDF to share with your advisor</button>
+      </div>
+    </div>
+
+  </main>
+</div><!-- /main-tool -->
+
+<footer>
+  <p>Sam M. Walton College of Business · University of Arkansas &nbsp;·&nbsp; <a href="https://sarahcgrace.com">sarahcgrace.com</a></p>
+</footer>
+
+<script>
+const TOTAL = 19;
+const STAGE_NAMES = ['Topic & Phenomenon','Literature Review','Research Question','Theory','Method','Findings & Conclusion'];
+
+const STAGE_SIZES = [3, 3, 4, 3, 3, 3];
+
+const LOCATION_DATA = [
+  {
+    title: "You're at the very beginning — and that's exactly right.",
+    body: "Right now, your most important job is <em>sharpening your phenomenon</em>. A vague topic won't give you much traction in the literature. Stages 1 and 2 are where you'll spend the most time early on — and they'll talk to each other constantly. Start with Stage 1, but expect to move back and forth between 1 and 2 as your thinking develops.",
+    focus: 0
+  },
+  {
+    title: "You have a phenomenon — now the literature is your main work.",
+    body: "Stage 2 is where the research process really starts to take shape. Your reading will simultaneously test and sharpen your Stage 1 phenomenon — expect your description of it to evolve. Focus on identifying themes and gaps, not just collecting papers. A research question will begin to suggest itself when the gap becomes clear.",
+    focus: 1
+  },
+  {
+    title: "Your lit review is taking shape — a research question should be emerging.",
+    body: "If you've read widely and synthesized by theme, the research question often feels like it <em>falls out</em> of the gaps you've found. If it isn't emerging yet, that's usually a signal to keep reading — or to talk through what you're finding with your advisor. Don't force a question before the literature is ready to give you one.",
+    focus: 2
+  },
+  {
+    title: "You have a research question — now theory and method need attention.",
+    body: "Stages 4 and 5 are often worked on together, since theory shapes what you look for in data and method shapes what you can say. Look at what theoretical frameworks appear in your most useful papers — your theory is likely already hiding in your lit review. Your method should follow from your question, not from what feels comfortable.",
+    focus: 3
+  },
+  {
+    title: "You're in the work — method is decided and data is underway.",
+    body: "The hardest part of the process is often this middle stretch. Stay connected to your research question as you collect and analyze — it's easy to drift. Stages 5 and 6 will overlap: as findings take shape, you'll start thinking about what they mean. Keep your advisor close during this stage.",
+    focus: 4
+  }
+];
+
+let selectedOnboardIdx = null;
+
+function selectStage(btn, idx) {
+  document.querySelectorAll('.onboard-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  selectedOnboardIdx = idx;
+  document.getElementById('startBtn').disabled = false;
+}
+
+function startTool() {
+  if (selectedOnboardIdx === null) return;
+  document.getElementById('onboarding').style.display = 'none';
+  document.getElementById('main-tool').style.display = 'block';
+
+  const loc = LOCATION_DATA[selectedOnboardIdx];
+  document.getElementById('locationTitle').textContent = loc.title;
+  document.getElementById('locationBody').innerHTML = loc.body;
+
+  // Mark focus stage
+  const focusIdx = loc.focus;
+  document.getElementById('card-' + focusIdx).classList.add('focus-stage');
+
+  // Add focus pill
+  const focusBadge = document.getElementById('badge-' + focusIdx);
+  focusBadge.insertAdjacentHTML('afterend', '<span class="focus-pill" id="focus-pill-' + focusIdx + '">focus here</span>');
+
+  // Add "not yet ready" notes to stages beyond current focus
+  for (let i = focusIdx + 2; i < 6; i++) {
+    addNotReadyNote(i, focusIdx);
+  }
+
+  // Auto-open focus stage
+  toggleCard(focusIdx);
+
+  // Scroll to tool
+  document.getElementById('main-tool').scrollIntoView({ behavior: 'smooth' });
+}
+
+function addNotReadyNote(stageIdx, focusIdx) {
+  const prereqs = [
+    '',
+    'a clear phenomenon (Stage 1)',
+    'a solid literature review (Stage 2)',
+    'a research question (Stage 3)',
+    'a theoretical framework (Stage 4)',
+    'a completed method and data collection (Stage 5)'
+  ];
+  const el = document.getElementById('nrn-' + stageIdx);
+  if (!el) return;
+  el.innerHTML = `<div class="not-ready-note">
+    <div class="nrn-icon">→</div>
+    <div class="nrn-text">
+      <strong>This stage comes later.</strong>
+      <p>Based on where you are now, you're not quite ready to focus here yet. Getting to this stage well requires ${prereqs[stageIdx]}. Read through for orientation if you're curious — but your energy is better spent on the earlier stages first.</p>
+    </div>
+  </div>`;
+}
+
+function toggleCard(i) {
+  const card = document.getElementById('card-' + i);
+  card.classList.toggle('open');
+}
+
+function updateProgress() {
+  const all = document.querySelectorAll('input[type="checkbox"]');
+  let checked = 0;
+  const stageChecked = [0,0,0,0,0,0];
+  let offset = 0;
+  STAGE_SIZES.forEach((size, si) => {
+    for (let i = 0; i < size; i++) {
+      if (all[offset + i] && all[offset + i].checked) { checked++; stageChecked[si]++; }
+    }
+    offset += size;
+  });
+
+  const pct = Math.round((checked / TOTAL) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressCount').textContent = checked + ' of ' + TOTAL + ' completed';
+  document.getElementById('statChecked').textContent = checked;
+  document.getElementById('statStages').textContent = stageChecked.filter(n => n > 0).length + '/6';
+  document.getElementById('statPct').textContent = pct + '%';
+
+  stageChecked.forEach((n, i) => {
+    const badge = document.getElementById('badge-' + i);
+    const card = document.getElementById('card-' + i);
+    const max = STAGE_SIZES[i];
+    if (n === 0) { badge.textContent = '—'; card.classList.remove('complete'); }
+    else if (n < max) { badge.textContent = 'in progress'; card.classList.remove('complete'); }
+    else { badge.textContent = '✓ ready'; card.classList.add('complete'); }
+  });
+
+  // Dynamic next steps
+  const steps = [];
+  const firstIncomplete = stageChecked.findIndex(n => n < 3);
+  if (firstIncomplete >= 0) {
+    steps.push('Your most immediate focus: <strong style="color:#c9ab5a;font-weight:500">' + STAGE_NAMES[firstIncomplete] + '</strong> — open it and work through the items you haven\'t checked off yet.');
+  }
+  if (stageChecked[0] === 3 && stageChecked[1] < 3) {
+    steps.push('You have a clear phenomenon. Now dig into the literature — Google Scholar, the UA Library, and NotebookLM are your starting point. Remember: Stages 1 and 2 work in a loop, so expect your phenomenon description to sharpen as you read.');
+  }
+  if (stageChecked[1] === 3 && stageChecked[2] < 3) {
+    steps.push('Your lit review is taking shape. A research question should be starting to emerge from the gaps you\'ve found. Try drafting one in Stage 3 — even rough — and bring it to your next advising meeting.');
+  }
+  if (stageChecked[2] === 3 && stageChecked[3] < 3) {
+    steps.push('You have a research question. Look at what theoretical frameworks appear most in your most useful papers — your theory is likely already there. Discuss it with your advisor before committing.');
+  }
+  if (stageChecked[3] === 3 && stageChecked[4] < 3) {
+    steps.push('Theory is settled. Now let your research question drive your method choice — not format preference. Discuss feasibility and IRB with your advisor early.');
+  }
+  if (checked === TOTAL) {
+    steps.push('You\'ve worked through all six stages. Bring your reflection notes to your next advising meeting — you\'re well prepared to have a productive conversation.');
+  }
+  if (steps.length === 0) {
+    steps.push('Open your focus stage and work through the self-check items honestly.');
+    steps.push('Use the reflection prompts to write out your thinking before your next advising meeting.');
+  }
+
+  document.getElementById('nextStepsList').innerHTML = steps.map(s =>
+    '<div class="next-step-item"><div class="next-step-bullet"></div><span>' + s + '</span></div>'
+  ).join('');
+}
+
+function printAssessment() {
+  for (let i = 0; i < 6; i++) {
+    document.getElementById('card-' + i).classList.add('open');
+  }
+  setTimeout(() => window.print(), 200);
+}
+</script>
+
+</body>
+</html>
