@@ -614,11 +614,42 @@ const INTERNSHIP_STAGE_SIZES = [3,3,3,3,3];
 
 const PRE_INTERNSHIP_STAGES = [
   {
-    cls:"istage-1", name:"Set Up Your Observation System", preview:"How will you capture what you learn — including things you never expected to care about?",
+    cls:"istage-1", name:"Get Oriented Before You Begin", preview:"A brief check-in, an example thesis, and the right mindset — before day one.",
+    checks:[
+      "I have had a brief check-in with Professor Grace before my internship begins — to talk through what I am curious about, what to pay attention to, and what the thesis process will look like.",
+      "I understand that my thesis topic may emerge from something I encounter during the internship that I did not anticipate — a strategy, a leadership philosophy, a business tension — and I am treating that as a feature, not a problem.",
+      "I have read at least one — ideally two — examples of strong Walton honors internship theses, so I know what the finished product looks like and understand that structure varies widely depending on what the student experienced and learned."
+    ],
+    cols:[
+      {label:"What makes an internship thesis different from a journal", items:[
+        "<strong>It is not a journal.</strong> A journal records what happened. A thesis analyzes what it means, connects it to scholarship, and makes a contribution.",
+        "<strong>It is not a company report.</strong> Your thesis is your intellectual work — your observations, your analysis, your argument. The company is the context, not the author.",
+        "<strong>There is no single required structure.</strong> Some strong theses are organized chronologically with an application section at the end. Others have a full literature review and a thematic findings section. What matters is that the structure serves your argument.",
+        "<strong>It is written in first person</strong> — this is expected and appropriate at Walton. Your voice, your observations, and your reflection are part of what makes it a thesis."
+      ]},
+      {label:"How thesis topics actually emerge from internships", items:[
+        "Sometimes the thesis is about your assigned project — you go deep on the problem, connect it to scholarship, and argue something meaningful about it",
+        "Sometimes the thesis is about something you encountered unexpectedly — a strategy, a decision framework, a cultural practice — that caught your attention and would not let go",
+        "<strong>Both are equally valid.</strong> What matters is that something genuinely captured your intellectual curiosity",
+        "By around week 4 or 5, something should be pulling your attention more than other things. That signal is worth paying attention to — bring it to Professor Grace.",
+        "If by the midpoint nothing has surprised or intrigued you, that is a signal to seek out more conversations and say yes to more experiences"
+      ]}
+    ],
+    pitfall:{title:"Deciding on a thesis topic before you have started", text:"Arriving at your internship with a fully formed thesis question can actually work against you — it narrows your attention before you know what is worth paying attention to. One of the strongest recent Walton internship theses began as a project about merchandise forecasting and became an original framework about transmedia brand storytelling, because the student stayed open to what surprised her halfway through the experience. Arrive curious. The topic will find you."},
+    exit:[
+      "You have had a pre-internship check-in with Professor Grace",
+      "You have read at least one example Walton internship thesis — ideally two, since they vary so much",
+      "You understand that your thesis topic may not be obvious until you are several weeks in — and you are prepared for that"
+    ],
+    reflection:{label:"What are you most curious about going into this internship — and what would make you most excited to write about?", hint:"You do not need a thesis question. Just name what you are curious about and what you are open to discovering.", placeholder:"I am most curious about... I think I might be surprised by... The thing I would find most exciting to write about would be..."},
+    irb:false
+  },
+  {
+    cls:"istage-2", name:"Set Up Your System", preview:"Note-taking, your project log, and how to build connections throughout the experience.",
     checks:[
       "I have chosen a format for weekly notes that I will actually use — a journal, a shared doc, a notes app — and I have written my first entry before the internship begins.",
-      "I know the five things to capture each week: what happened, what surprised me, what I learned from conversations, what marketing concepts I encountered that I want to understand better, and what questions I still have.",
-      "I have a separate log for my assigned internship project — the problem I am given, how my understanding of it evolves week by week, and what the outcome is."
+      "I know the five things to capture each week: what happened, what surprised me, what I learned from conversations, what marketing concepts I want to understand better, and what questions I still have.",
+      "I have a separate log for my assigned internship project — the problem I am given, how my understanding evolves, and what the outcome ends up being."
     ],
     cols:[
       {label:"Your weekly note prompt — use this every week", items:[
@@ -628,59 +659,27 @@ const PRE_INTERNSHIP_STAGES = [
         "<strong>What marketing concept or idea did I encounter that I want to understand better?</strong> A strategy, a framework, a tension, a decision — anything that made you want to know more. You do not need to know what it is called yet. Just describe what you noticed.",
         "<strong>What questions do I still have?</strong> Unanswered things, tensions you observed, things that did not quite make sense"
       ]},
-      {label:"Your project log — track this separately", items:[
-        "What is the problem or project I have been assigned — and what do I understand about it so far?",
-        "How is my understanding of the problem evolving as I learn more?",
-        "What data, conversations, or observations are shaping my approach?",
-        "What is the outcome — what did I produce, present, or recommend?",
-        "<strong>Note:</strong> your thesis may end up being about your assigned project — or about something else you encountered along the way. Both are completely normal. The log keeps both possibilities alive."
+      {label:"Building connections throughout — the snowball approach", items:[
+        "You may not know who the most valuable people to talk to are before you start — and that is fine. The goal is to build your network as you go.",
+        "<strong>The snowball approach:</strong> after every meaningful conversation, ask the person who else they would recommend you speak with. One good conversation leads to the next.",
+        "Aim to talk to people outside your immediate team — someone in an adjacent function, a senior leader, a store operator, a peer intern in a different department",
+        "Prepare 2-3 specific questions before each conversation. Saying you are working on an honors thesis and are curious how someone thinks about X in their role — and asking for 20 minutes — works far better than a vague request.",
+        "Add every conversation to your weekly notes immediately: what did you learn, what surprised you, what do you want to understand better?",
+        "<strong>Note:</strong> your thesis may end up being about your assigned project — or about something else you encountered. The log keeps both possibilities alive."
       ]}
     ],
-    pitfall:{title:"Waiting until it is over to write things down", text:"Memory is unreliable and fades fast. An observation you do not capture within 24 hours is often gone. The students who write the strongest internship theses are the ones who wrote things down consistently — not because they were disciplined, but because they were genuinely curious. A short note the evening after a surprising conversation is worth more than a long reconstruction three weeks later. Your thesis topic may come from something you never expected to notice."},
+    pitfall:{title:"Waiting until it is over to write things down", text:"Memory is unreliable and fades fast. An observation you do not capture within 24 hours is often gone. The students who write the strongest internship theses are the ones who wrote things down consistently — not because they were disciplined, but because they were genuinely curious. A short note the evening after a surprising conversation is worth more than a long reconstruction three weeks later."},
     exit:[
       "You have a note-taking format chosen and your first entry written",
       "You can describe the five weekly prompts from memory — especially the what-surprised-me prompt",
-      "You have a separate project log started, even if it only has one line so far"
+      "You have a separate project log started, even if it only has one line so far",
+      "You understand the snowball networking approach and plan to use it early in the experience"
     ],
     reflection:{label:"What is your plan for capturing what you learn — and when specifically will you write each week?", hint:"The more concrete the plan, the more likely you are to follow it. Name the day, the format, and roughly how long you will spend.", placeholder:"I plan to take notes using... I will write on... each week. The thing I most want to make sure I capture is..."},
     irb:false
-  },
-  {
-    cls:"istage-2", name:"Arrive Open — Prepared, Curious, and Ready to Be Surprised", preview:"You do not need a thesis question before you start. You need a check-in, a system, and the right mindset.",
-    checks:[
-      "I have had a brief check-in with Professor Grace before my internship begins — to talk through what I am curious about and what to pay attention to.",
-      "I understand that my thesis topic may emerge from something I encounter during the internship that I did not anticipate — and I am treating that as a feature, not a problem.",
-      "I have identified the people I most want to learn from and have a plan for seeking out conversations — not just with my direct team, but with people in adjacent roles and senior leaders.",
-      "I have read at least one example of a strong Walton honors internship thesis so I know what the finished product looks like and what makes it different from a journal or company report."
-    ],
-    cols:[
-      {label:"How thesis topics actually emerge from internships", items:[
-        "Sometimes the thesis is about your assigned project — you go deep on the problem, connect it to scholarship, and argue something meaningful about it",
-        "Sometimes the thesis is about something you encountered unexpectedly — a strategy, a leadership philosophy, a cultural practice, a business tension — that caught your attention and would not let go",
-        "<strong>Both are equally valid.</strong> What matters is that something genuinely captured your intellectual curiosity — not that you arrived knowing what it would be",
-        "By around week 4 or 5, something should be pulling your attention more than other things. That signal is worth paying attention to. Bring it to Professor Grace.",
-        "If by the midpoint nothing has surprised or intrigued you, that is a signal to seek out more conversations and say yes to more experiences"
-      ]},
-      {label:"Who to seek out and how to ask", items:[
-        "<strong>Senior leaders:</strong> most internship programs offer access to executives. Prepare 2-3 questions in advance — these conversations are often where the most surprising thesis material comes from",
-        "<strong>People in adjacent functions:</strong> if you are in marketing, talk to someone in supply chain, finance, or store operations. Cross-functional perspective almost always enriches a thesis",
-        "<strong>Peers and other interns:</strong> often the most candid sources about how the organization actually works",
-        "<strong>How to ask:</strong> be specific. Saying you are working on an honors thesis and are curious how someone thinks about X in their role — and asking for 20 minutes — works far better than a vague request",
-        "<strong>After every conversation:</strong> add it to your weekly notes immediately. What did you learn? What surprised you? What do you want to understand better?"
-      ]}
-    ],
-    pitfall:{title:"Deciding on a thesis topic too early and too rigidly", text:"Arriving at your internship with a fully formed thesis question can actually work against you — it narrows your attention before you know what is worth paying attention to. One of the strongest recent Walton internship theses began as a project about merchandise forecasting and became an original framework about transmedia brand storytelling, because the student stayed open to what surprised her halfway through the experience. The note-taking system is your anchor. The thesis topic is something you discover, not something you decide in advance."},
-    exit:[
-      "You have had a pre-internship check-in with Professor Grace",
-      "You have a list of people you want to have conversations with, including at least two outside your immediate team",
-      "You have read at least one example Walton internship thesis",
-      "You are ready to pay attention to what catches your attention — not just what you were assigned"
-    ],
-    reflection:{label:"What are you most curious about going into this internship — and what kinds of things do you think might surprise you?", hint:"You do not need a thesis question. Just name what you are curious about and what you are open to discovering.", placeholder:"I am most curious about... I think I might be surprised by... The conversations I most want to have are..."},
-    irb:false
   }
 ];
-const PRE_INTERNSHIP_STAGE_SIZES = [3,4];
+const PRE_INTERNSHIP_STAGE_SIZES = [3,3];
 
 const PRE_INTERNSHIP_LOCATIONS = [
   {title:"You haven't started yet — this is the most important window to prepare.",body:"Students who arrive at their internship with a thesis mindset — curious, observant, and ready to document — write dramatically stronger theses than those who treat the thesis as something to figure out afterward. Use this guide to set up your system and clarify your focus before day one.",focus:0}
